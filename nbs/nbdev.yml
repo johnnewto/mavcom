@@ -1,0 +1,9 @@
+project:
+  output-dir: _docs
+
+website:
+  title: "mavcom"
+  site-url: "https://johnnewto.github.io/UAV"
+  description: "All things that go into a mavcom: Cameras, Software, Telemetry etc"
+  repo-branch: main
+  repo-url: "https://github.com/johnnewto/UAV"
