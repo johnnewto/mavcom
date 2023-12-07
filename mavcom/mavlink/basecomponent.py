@@ -2,7 +2,7 @@ from __future__ import annotations
 
 DEBUG_HEARTBEAT = False  # set true is show heartbeat messages
 
-__all__ = ['mavlink_command_to_string', 'BaseComponent']
+__all__ = ['mavlink_command_to_string', 'BaseComponent', 'MAVLink', 'mavlink', 'mavutil']
 
 # from mavcom.imports import *   # TODO why is this relative import on nbdev_export?
 import asyncio
