@@ -4,7 +4,7 @@ from colorlog import ColoredFormatter
 import typing as typ
 from enum import Enum
 
-LOG_BASE_NAME = 'uav'
+LOG_BASE_NAME = 'mav'
 LOG_FORMAT = '%(log_color)s%(levelname)-5.5s|%(asctime)s.%(msecs)03d| %(name)-15.15s | %(filename)-10.10s:%(lineno)3d | %(threadName)10.10s | %(processName)-10.10s | %(message)s'
 LOG_DATE_FORMAT = '%S'
 
@@ -28,7 +28,7 @@ class LogLevels():
     TRACE = logging.DEBUG - 1
 
 def get_log_level():
-    return int(os.getenv("UAV_LOG_LEVEL", logging.DEBUG / 10)) * 10
+    return int(os.getenv("MAVCOM_LOG_LEVEL", logging.DEBUG / 10)) * 10
 
 
 def setup_logging(verbose: int = logging.DEBUG):

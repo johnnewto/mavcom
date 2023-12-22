@@ -11,7 +11,7 @@ import time
 
 
 from mavcom.mavlink import Component, MAVCom, mavlink, mavutil
-
+from mavcom.utils import config_dir, get_platform, toml_load, find_uart_devices
 # utils.set_gst_debug_level(Gst.DebugLevel)
 # con1 = "udpin:localhost:14445"
 # con1 = "/dev/ttyACM0" "/dev/ttyUSB1"
@@ -19,7 +19,7 @@ from mavcom.mavlink import Component, MAVCom, mavlink, mavutil
 # con1 = "udpout:192.168.122.84:14445"
 # con1 = "udpin:10.42.0.1:14445"
 
-mav_connection = "/dev/ttyUSB0"
+mav_connection = find_uart_devices()[0].device
 source_system = 255
 target_system = 222
 

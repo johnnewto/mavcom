@@ -15,7 +15,7 @@ import logging
 
 LOG_DIR = 'logs'
 LOGGING_LEVEL = logging.INFO
-LOGGING_NAME = 'uav_log'
+LOGGING_NAME = 'mav_log'
 
 
 

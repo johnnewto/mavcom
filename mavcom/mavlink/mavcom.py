@@ -11,8 +11,7 @@ from ..utils.general import LeakyQueue, format_rcvd_msg, time_since_boot_ms, tim
 assert os.environ[
            'MAVLINK20'] == '1', "Set the environment variable before from pymavlink import mavutil  library is imported"
 
-# logging.getLogger("uav").setLevel(logging.DEBUG)
-# logging.root.setLevel(logging.INFO)
+
 import threading
 import queue
 import typing as typ
@@ -265,7 +264,7 @@ class MAVCom:
 
     def __init__(self, connection_string: str,  # "udpin:localhost:14550"
                  baudrate: int = 57600,  # baud rate of the serial port
-                 source_system: int = MAV_SYSTEM_VEHICLE,  # remote or air uav system   1 = vehicle
+                 source_system: int = MAV_SYSTEM_VEHICLE,  # remote or air system   1 = vehicle
                  loglevel: LogLevels | int = LogLevels.INFO,  # logging level
                  ):
 

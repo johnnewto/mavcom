@@ -3,7 +3,7 @@ project:
 
 website:
   title: "mavcom"
-  site-url: "https://johnnewto.github.io/UAV"
-  description: "All things that go into a mavcom: Cameras, Software, Telemetry etc"
+  site-url: "https://johnnewto.github.io/mavcom"
+  description: "MAVlink temetery and control, create systems and components and comunicate with companion computers"
   repo-branch: main
-  repo-url: "https://github.com/johnnewto/UAV"
+  repo-url: "https://github.com/johnnewto/mavcom"

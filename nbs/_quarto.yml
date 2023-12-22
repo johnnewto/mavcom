@@ -73,7 +73,7 @@ website:
             href: getting_started.ipynb#faq
     right:
       - icon: github
-        href: "https://github.com/johnnewto/UAV"
+        href: "https://github.com/johnnewto/mavcom"
       - icon: twitter
         href: https://twitter.com/maui63
         aria-label: Maui63.ai Twitter

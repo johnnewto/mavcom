@@ -3,7 +3,7 @@
 d = { 'settings': { 'branch': 'main',
                 'doc_baseurl': '/mavcom',
                 'doc_host': 'https://johnnewto.github.io',
-                'git_url': 'https://github.com/johnnewto/UAV',
+                'git_url': 'https://github.com/johnnewto/mavcom',
                 'lib_path': 'tests'},
 'syms': {}
   }

@@ -15,7 +15,7 @@ import logging
 # %% ../nbs/api/02_params.ipynb 8
 LOG_DIR = 'logs'
 LOGGING_LEVEL = logging.INFO
-LOGGING_NAME = 'uav_log'
+LOGGING_NAME = 'umav_log'
 
 
 # %% ../nbs/api/02_params.ipynb 12

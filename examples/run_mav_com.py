@@ -1,4 +1,5 @@
 import asyncio
+import time
 
 from mavcom.mavlink.component import Component, mavlink
 from mavcom.mavlink.mavcom import MAVCom
@@ -20,10 +21,12 @@ class Cam2(Component):
         super().__init__(source_component=source_component, mav_type=mav_type)
         self.append_message_handler(on_message)
 
+
 class Cli(Component):
     def __init__(self, source_component, mav_type, debug=False):
         super().__init__(source_component=source_component, mav_type=mav_type)
         self.append_message_handler(on_message)
+
 
 con1, con2 = "udpin:localhost:14445", "udpout:localhost:14445"
 
@@ -44,15 +47,21 @@ async def main():
                                                    target_component=22)
                 print(f"Component {comp}, Heartbeat: {result = }")
 
-            Num_Iters = 3
-            for i in range(Num_Iters):
+            num_iters = 3
+            for i in range(num_iters):
                 await client.component[11].test_command(222, 22, 1)
 
                 await client.component[11].test_command(222, 23, 1)
 
             await client.component[11].test_command(222, 24, 1)
 
-    return client, server, Num_Iters
+            # uncomment to keep the program running
+            # try:
+            #     while True:
+            #         await asyncio.sleep(0.1)
+            # except KeyboardInterrupt:
+            #     pass
+    return client, server, num_iters
 
 
 if __name__ == '__main__':
@@ -74,6 +83,6 @@ if __name__ == '__main__':
     assert client.component[11].num_acks_drop == 1
     assert server.component[22].num_cmds_rcvd == Num_Iters
     assert server.component[23].num_cmds_rcvd == Num_Iters
-
+    print("**** Passed **** ")
 if __name__ == '__main__':
     print("Done")

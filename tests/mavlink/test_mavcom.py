@@ -13,8 +13,7 @@ from mavcom.utils.general import LeakyQueue
 assert os.environ[
            'MAVLINK20'] == '1', "Set the environment variable before from pymavlink import mavutil  library is imported"
 
-# logging.getLogger("uav").setLevel(logging.DEBUG)
-# logging.root.setLevel(logging.INFO)
+
 import threading
 import queue
 import typing as typ

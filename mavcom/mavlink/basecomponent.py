@@ -8,8 +8,7 @@ __all__ = ['mavlink_command_to_string', 'BaseComponent', 'MAVLink', 'mavlink', '
 import asyncio
 import os
 import queue
-# logging.getLogger("uav").setLevel(logging.DEBUG)
-# logging.root.setLevel(logging.INFO)
+
 import threading
 import time
 import typing as typ
@@ -385,7 +384,7 @@ class BaseComponent:
             self.num_acks_drop += 1
             return False
 
-    async def _test_command(self, target_system: int,  # target system
+    async def test_command(self, target_system: int,  # target system
                             target_component: int,  # target component
                             camera_id: int):  # cameras id (0 for all cams)
         """
@@ -403,15 +402,15 @@ class BaseComponent:
                                  0,  # param7 (command ID)
                                  ])
 
-    async def test_command(self, target_system: int,  # target system
-                           target_component: int,  # target component
-                           camera_id: int):  # cameras id (0 for all cams)
-        msg = self.master.mav.gimbal_manager_set_manual_control_send(target_system, target_component, 0, 0, 0, 0, 0, 0, )  # todo this is not working in ardupilot routing
-
-        msg = self.master.mav.gimbal_device_set_attitude_send(target_system, target_component, 0, [0, 0, 0, 0], 0, 0, 0)
-        self.log.debug(f"!!!!! Sending Test Message: {target_system}/{target_component}")
-
-        await asyncio.sleep(0.1)
+    # async def test_command(self, target_system: int,  # target system
+    #                        target_component: int,  # target component
+    #                        camera_id: int):  # cameras id (0 for all cams)
+    #     # msg = self.master.mav.gimbal_manager_set_manual_control_send(target_system, target_component, 0, 0, 0, 0, 0, 0, )  # todo this is not working in ardupilot routing
+    #
+    #     msg = self.master.mav.gimbal_device_set_attitude_send(target_system, target_component, 0, [0, 0, 0, 0], 0, 0, 0)
+    #     self.log.debug(f"!!!!! Sending Test Message: {target_system}/{target_component}")
+    #
+    #     await asyncio.sleep(0.1)
 
     def close(self):
         # self._t_heartbeat.join() # don't wait as its a daemon thread
