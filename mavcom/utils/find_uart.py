@@ -1,10 +1,10 @@
 __all__ = ['find_uart_devices']
 
 import serial.tools.list_ports
-from serial.tools.list_ports_common import ListPortInfo
 
 
-def find_uart_devices(name="FT231X") -> list[ListPortInfo]:
+
+def find_uart_devices(name="FT231X") -> list:
     ftdi_devices = []
     # List all connected serial ports
     ports = serial.tools.list_ports.comports()
